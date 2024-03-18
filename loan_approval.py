@@ -12,6 +12,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 import seaborn as sns
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 
 file_path = "Loan_Status_Prediction_Data.csv"
 
@@ -84,14 +86,14 @@ y_hat = model.predict(X_test)
 accuracy = accuracy_score(Y_test, y_hat)
 print(accuracy)
 
-from sklearn.ensemble import RandomForestClassifier
+
 model_two = RandomForestClassifier()
 model_two.fit(X_train,Y_train)
 y_hat_two = model_two.predict(X_test)
 accuracy_two = accuracy_score(Y_test,y_hat_two)
 print(accuracy_two)
 
-from sklearn.neighbors import KNeighborsClassifier
+
 knn_model = KNeighborsClassifier(n_neighbors=5)
 knn_model.fit(X_train, Y_train)
 y_hat_knn = knn_model.predict(X_test)
